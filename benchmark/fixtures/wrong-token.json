@@ -1,0 +1,20 @@
+{
+  "network": "base-mainnet",
+  "chain_id": 8453,
+  "wallet": "0xA111111111111111111111111111111111111111",
+  "action": "claim",
+  "target_contract": "0xB222222222222222222222222222222222222222",
+  "asset": {
+    "symbol": "USDC",
+    "token": "0x1111111111111111111111111111111111111111",
+    "decimals": 6,
+    "amount_base_units": "10000"
+  },
+  "allowance": {
+    "spender": "0xB222222222222222222222222222222222222222",
+    "amount_base_units": "10000"
+  },
+  "gas_asset": "ETH",
+  "expected_event": "BountyClaimed"
+}
+

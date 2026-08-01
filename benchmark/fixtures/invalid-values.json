@@ -1,0 +1,20 @@
+{
+  "network": "base-mainnet",
+  "chain_id": 8453,
+  "wallet": "0x0000000000000000000000000000000000000000",
+  "action": "fund",
+  "target_contract": "0x0000000000000000000000000000000000000000",
+  "asset": {
+    "symbol": "USDC",
+    "token": "0x833589fCD6eDb6E08f4c7C32D4f71b54bdA02913",
+    "decimals": 6,
+    "amount_base_units": "0"
+  },
+  "allowance": {
+    "spender": "0x0000000000000000000000000000000000000000",
+    "amount_base_units": "0"
+  },
+  "gas_asset": "ETH",
+  "expected_event": "FundingAdded"
+}
+

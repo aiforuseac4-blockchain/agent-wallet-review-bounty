@@ -1,0 +1,70 @@
+{
+  "network": "base-mainnet",
+  "parent_bounty_contract": "0x41f7f2722f0af7289c2f2eea6afed6f4873f722a",
+  "parent_solver": "0x8e61edc567503a7d3b3554c51230f512c4ea7b1e",
+  "intended_child_solver": "<CONFIRMED_CHILD_SOLVER_BASE_ADDRESS>",
+  "title": "Build a deterministic Base agent-wallet transaction review CLI",
+  "goal": "Implement a dependency-free read-only CLI that converts a Base USDC wallet action plan into a deterministic human confirmation card and rejects unsafe inputs.",
+  "acceptance_criteria": [
+    "Add solution/scripts/render-agent-wallet-review.mjs and accept exactly one JSON file path argument.",
+    "For valid Base-mainnet native-USDC claim or fund plans, emit exactly one compact deterministic JSON line with normalized addresses, a human-readable amount, exact allowance scope, gas asset, expected event, and no warnings; write nothing to stderr and exit zero.",
+    "Reject wrong network or token, invalid or zero addresses, non-positive non-decimal amounts, allowance amount different from the action amount, allowance spender different from the target contract, unexpected events, and recursively embedded secret fields; emit the committed ordered error list and exit one.",
+    "For wrong argument count, unreadable input, malformed JSON, or a non-object root, emit the committed single error and exit two.",
+    "Use only Node.js built-ins and perform no network requests, signing, transaction broadcast, or file writes.",
+    "Pass every test in the immutable benchmark and produce byte-identical output for repeated identical input."
+  ],
+  "benchmark_source": {
+    "kind": "github_commit",
+    "repository": "aiforuseac4-blockchain/agent-wallet-review-bounty",
+    "commit": "<40_HEX_BENCHMARK_COMMIT>",
+    "subdirectory": "benchmark"
+  },
+  "runner_manifest": {
+    "schema_version": "agent-bounties/regression-sandbox-v1",
+    "image": "docker.io/library/node@sha256:b74031e546d7f4faf561d797ac1b76beccac856a042815ca77db4fd047581605",
+    "command": [
+      "node",
+      "/benchmark/test.mjs",
+      "/workspace"
+    ],
+    "workdir": "/workspace",
+    "benchmark_digest": "sha256:255846520798194cb605fae861aa128dbf5d0a387301546b6e362fb05b055d53",
+    "timeout_seconds": 30,
+    "cpu_millis": 500,
+    "memory_bytes": 134217728,
+    "pids_limit": 32,
+    "max_output_bytes": 262144,
+    "tmpfs_bytes": 67108864,
+    "max_source_bytes": 4194304,
+    "max_source_files": 100,
+    "max_benchmark_bytes": 4194304,
+    "max_benchmark_files": 100,
+    "platform": "linux/amd64",
+    "test_seed": 1
+  },
+  "evidence_schema": {
+    "type": "object",
+    "properties": {
+      "source_subdirectory": {
+        "type": "string",
+        "const": "solution"
+      },
+      "source_snapshot_digest": {
+        "type": "string",
+        "pattern": "^sha256:[0-9a-f]{64}$"
+      }
+    },
+    "required": [
+      "source_subdirectory",
+      "source_snapshot_digest"
+    ],
+    "additionalProperties": true
+  },
+  "verifier_reward": {
+    "amount": 10000,
+    "currency": "usdc"
+  },
+  "nonce_salt": "issue-649-agent-wallet-review-v1",
+  "source_url": "<PUBLIC_CHILD_ISSUE_URL>",
+  "discovery_source": "github-agent-bounties-649"
+}
