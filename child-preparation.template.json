@@ -16,7 +16,7 @@
   "benchmark_source": {
     "kind": "github_commit",
     "repository": "aiforuseac4-blockchain/agent-wallet-review-bounty",
-    "commit": "<40_HEX_BENCHMARK_COMMIT>",
+    "commit": "f3642f45b0e42ad1f109af89198f2840eb8bcc0c",
     "subdirectory": "benchmark"
   },
   "runner_manifest": {

@@ -25,4 +25,4 @@
 - 容器：`docker.io/library/node@sha256:b74031e546d7f4faf561d797ac1b76beccac856a042815ca77db4fd047581605`
 - 命令：`node /benchmark/test.mjs /workspace`
 - 基准 directory-v1 摘要：`sha256:255846520798194cb605fae861aa128dbf5d0a387301546b6e362fb05b055d53`
-- 基准提交在本地提交完成后补入
+- 基准提交：`f3642f45b0e42ad1f109af89198f2840eb8bcc0c`
